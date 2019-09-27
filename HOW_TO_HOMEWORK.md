@@ -2,7 +2,7 @@
 
 Odevleri herkes kendi adı ile acilmis branch icinde paylasmalı.
 
-Odev Proje isimlendirmesi: <<ADSOYAD>><<OdevNo>> şeklinde olmalı yani Örnek olarak "DoganCanHafta3" gibi.
+Odev Proje isimlendirmesi: AdSoyadOdevNo şeklinde olmalı yani Örnek olarak "DoganCanHafta3" gibi.
 
 ## Step 1:
 ![1](./_bilgi/1_branches.PNG)

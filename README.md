@@ -2,7 +2,7 @@
 
 ## ODEV GONDERIMI
 
-Odevleri herkes keni adı ile acilmis branch icinde paylasmalı.
+Odevleri herkes kendi adı ile acilmis branch icinde paylasmalı.
 
 ## EGITIM PROGRAMI
 

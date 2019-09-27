@@ -1,5 +1,7 @@
 # HOW TO SEND HOMEWORK
 
+Odevleri herkes kendi adı ile acilmis branch icinde paylasmalı.
+
 ## Step 1:
 ![1](./_bilgi/1_branches.PNG)
 

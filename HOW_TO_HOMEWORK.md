@@ -1,1 +1,1 @@
-![1](1_branches.PNG)
+![1](./_bilgi/1_branches.PNG)

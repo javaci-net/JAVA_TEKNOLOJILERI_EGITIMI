@@ -4,6 +4,8 @@
 
 Odevleri herkes kendi adı ile acilmis branch icinde paylasmalı.
 
+:exclamation: [ODEV GONDERIMI BILGI](HOW_TO_HOMEWORK.md)
+
 ## EGITIM PROGRAMI
 
 * Git / Maven - 1 hafta - Özkan - 07 Eylül (/)

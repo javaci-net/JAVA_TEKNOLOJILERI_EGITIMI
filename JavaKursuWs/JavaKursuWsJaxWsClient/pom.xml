@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>net.javaci.ws</groupId>
+    <artifactId>JavaKursuWs</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>JavaKursuWsJaxWsClient</artifactId>
+  <name>Java Kursu Ws - Jax Ws Client</name>
+  <description>Java Kursu Ws Jax Ws Client</description>
+  
+  <build>
+		<pluginManagement>
+			<plugins>
+				<!-- 
+					RUN jaxws:wsimport
+					https://mvnrepository.com/artifact/org.jvnet.jax-ws-commons/jaxws-maven-plugin
+					uses ws-import tool to generate wsdl automatically 
+				-->
+				<plugin>
+					<groupId>org.jvnet.jax-ws-commons</groupId>
+    				<artifactId>jaxws-maven-plugin</artifactId>
+    				<version>2.3.1-b20150201.1248</version>
+    				
+    				<configuration>
+    					<wsdlFiles>${project.basedir}/src/main/resources/salutation.xml</wsdlFiles>
+    					<packageName>net.javaci.ws.jaxws.sample1.client.soap.stubs</packageName>
+    					<sourceDestDir>${project.basedir}/src/main/java</sourceDestDir>
+    					<keep>true</keep>
+    					<verbose>true</verbose>
+    				</configuration>
+    				
+    				<executions>
+    					<execution>
+    						<id>wsimport-for-jaxws</id>
+    						<phase>process-classes</phase>
+    						<goals>
+    							<goal>wsimport</goal>
+    						</goals>
+    					</execution>
+    				</executions>
+    				
+    				<dependencies>
+    					<dependency>
+    						<groupId>com.sun.xml.ws</groupId>
+    						<artifactId>jaxws-tools</artifactId>
+    						<version>RELEASE</version>
+    					</dependency>
+    				</dependencies>
+    				
+				</plugin>
+				
+  			</plugins>
+  			
+		</pluginManagement>
+	</build>
+</project>

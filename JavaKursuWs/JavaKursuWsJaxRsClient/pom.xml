@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>net.javaci.ws</groupId>
+    <artifactId>JavaKursuWs</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>JavaKursuWsJaxRsClient</artifactId>
+  <name>Java Kursu Ws - Jax Rs Client</name>
+  <description>Java Kursu Ws - Jax Rs Client - Jersey Implementation</description>
+  
+  <dependencies>
+		
+		<dependency>
+			<groupId>net.javaci.ws</groupId>
+			<artifactId>JavaKursuWsCommon</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.glassfish.jersey.bundles</groupId>
+			<artifactId>jaxrs-ri</artifactId>
+			<version>2.29.1</version>
+		</dependency>
+	</dependencies>
+	
+</project>

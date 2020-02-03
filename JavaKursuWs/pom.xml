@@ -16,7 +16,8 @@
 		<module>JavaKursuWsJaxWsClient</module>
 		<module>JavaKursuWsJaxRsServer</module>
 		<module>JavaKursuWsJaxRsClient</module>
-		<module>JavaKursuWsSparkjava</module>
+		<module>JavaKursuWsSparkjavaServer</module>
+		<module>JavaKursuWsSpringbootServer</module>
 	</modules>
 
 	<properties>

@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>net.javaci.ws</groupId>
+		<artifactId>JavaKursuWs</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>JavaKursuWsSpringbootServer</artifactId>
+	<name>Java Kursu Ws - Springboot Server</name>
+	<description>Java Kursu Ws - Springboot REST API</description>
+
+	<properties>
+		<springframework.boot.version>2.2.4.RELEASE</springframework.boot.version>
+		<swagger.springfox.version>2.9.2</swagger.springfox.version>
+		<full-artifact-name>target/${project.artifactId}-${project.version}.jar</full-artifact-name>
+	</properties>
+
+	<!-- Spring boot Configuration without the spring-boot-starter-parent -->
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${springframework.boot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>net.javaci.ws</groupId>
+			<artifactId>JavaKursuWsCommon</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>${swagger.springfox.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>${swagger.springfox.version}</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-bean-validators</artifactId>
+			<version>${swagger.springfox.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>${springframework.boot.version}</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>net.javaci.ws.springboot.sample1.SpringbootApp1</mainClass>
+				</configuration>
+			</plugin>
+
+			<!-- https://devcenter.heroku.com/articles/deploying-java-applications-with-the-heroku-maven-plugin -->
+			<plugin>
+				<groupId>com.heroku.sdk</groupId>
+				<artifactId>heroku-maven-plugin</artifactId>
+				<version>2.0.16</version>
+				<configuration>
+					<appName>javakursu-ws-springbootserver</appName>
+					<jdkVersion>1.8</jdkVersion>
+					<processTypes>
+						<web>java $JAVA_OPTS -jar ${full-artifact-name} -Dserver.port=$PORT $JAR_OPTS</web>
+					</processTypes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

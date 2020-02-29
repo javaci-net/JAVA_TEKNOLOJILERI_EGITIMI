@@ -1,0 +1,29 @@
+<config
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://www.ehcache.org/v3'
+    xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+
+  <cache-template name="numberdefault"> 
+     <key-type>java.lang.Integer</key-type> 
+    <value-type>java.lang.Long</value-type> 
+    <resources>
+      <heap unit="entries">5000</heap> 
+    </resources>
+  </cache-template>
+
+  <cache alias="factorialCache" uses-template="numberdefault"> 
+    <key-type>java.lang.Long</key-type>
+  </cache>
+  
+  
+   <cache alias="customerCache"> 
+    <key-type>java.lang.Integer</key-type> 
+    <value-type>net.javaci.ehcache.entity.Customer</value-type> 
+    <resources>
+      <heap unit="entries">5000</heap> 
+    </resources>
+  </cache>
+
+  <cache alias="otherCacheByDefault" uses-template="numberdefault" /> 
+
+</config>
